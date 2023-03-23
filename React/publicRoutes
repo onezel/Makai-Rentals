@@ -1,0 +1,46 @@
+import { lazy } from "react";
+const Landing = lazy(() => import("../components/landing/Landing"));
+const Blogs = lazy(() => import("../components/blogs/Blogs"));
+const BlogDetail = lazy(() => import("../components/blogs/BlogDetail"));
+const AboutUs = lazy(() => import("../components/about/AboutUs"));
+
+
+const routes = [
+  
+  {
+    path: "/",
+    name: "Landing",
+    exact: true,
+    element: Landing,
+    roles: [],
+    isAnonymous: true,
+  },
+  {
+    path: "/blogs",
+    name: "Blogs",
+    exact: true,
+    element: Blogs,
+    roles: [],
+    isAnonymous: true,
+  },
+  {
+    path: "/blogs/:id",
+    name: "BlogDetail",
+    exact: true,
+    element: BlogDetail,
+    roles: [],
+    isAnonymous: true,
+  },
+  {
+    path: "/aboutUs",
+    name: "About Us",
+    exact: true,
+    element: AboutUs,
+    roles: [],
+    isAnonymous: true,
+  },
+];
+
+const allRoutes = [...routes, ...errorRoutes, ...stripeRoutes];
+
+export default allRoutes;
